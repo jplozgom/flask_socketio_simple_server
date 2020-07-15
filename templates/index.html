@@ -1,0 +1,88 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Mobbot - SocketIO Extension test</h2>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div id="log-messages" class="messages">
+                    <h4 class="text-center">Messages received:</h4>
+                    <template id="message_template">
+                        <p class="message_mobbot"></p>
+                    </template>
+                    <div style="border: 1px solid rgb(169, 174, 192); padding: 20px;min-height: 300px;" id="message_container"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div id="log-notifications" class="notifications">
+                    <h4 class="text-center">Notifications received:</h4>
+                    <template id="notification_template">
+                        <p class="notification_mobbot"></p>
+                    </template>
+                    <div style="border: 1px solid rgb(169, 174, 192); padding: 20px;min-height: 300px;" id="notification_container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+    integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript"charset="utf-8">
+        $(document).ready(function () {
+            url = "127.0.0.1"
+            namespace = '/mobbot';
+            var socket = io(namespace);
+
+            //connected to server event
+            socket.on('connect', function () {
+                console.log("connected to server");
+            });
+
+            //listen for mobbot message
+            socket.on('mobbot_message', (data) => {
+                console.log("new message --- " + data.msg)
+                printData("message", data.msg)
+            });
+
+            //listen for mobbot notification
+            socket.on('mobbot_notification', (data) => {
+                console.log("new message --- " + data.msg)
+                printData("notification", data.msg)
+            });
+
+            function printData(type, msg){
+                const template = document.getElementById(type+"_template");
+                let copy = template.content.cloneNode(true);
+                let container = document.getElementById(type + "_container");
+                copy.querySelector("."+type+"_mobbot").innerHTML = msg + " - " + Date.now().toString();
+                container.appendChild(copy);
+            }
+
+        });
+    </script>
+</body>
+</html>
