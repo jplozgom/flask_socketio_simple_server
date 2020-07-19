@@ -4,6 +4,9 @@ from threading import Lock
 from flask import Flask, render_template, session, request, copy_current_request_context
 from flask_socketio import SocketIO, emit, disconnect
 from datetime import datetime
+from flask_cors import CORS, cross_origin
+
+
 
 # Set this variable to "threading", "eventlet" or "gevent" to test the
 # different async modes, or leave it set to None for the application to choose
@@ -12,13 +15,12 @@ async_mode = None
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Mobbot93274asdA#2dd%$3dzA!'
-socketio = SocketIO(app, async_mode=async_mode)
+# socketio = SocketIO(app, async_mode=async_mode)
+socketio = SocketIO(app, async_mode=async_mode,  cors_allowed_origins="*")
 notificationsThread = None
 messagesThread = None
-
+CORS(app)
 thread_lock = Lock()
-
-
 
 
 def backgroundMessaging():
