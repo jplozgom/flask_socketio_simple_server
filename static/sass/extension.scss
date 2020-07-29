@@ -7,12 +7,13 @@ html {
 }
 body {
     padding: 30px 15px;
-    padding-top: 175px;
+    padding-top: 185px;
 }
 * {
     color: white;
 }
-
+.columns{
+}
 #extension-timer {
 }
 
@@ -35,14 +36,22 @@ header{
     left: 0;
     width: 100%;
     background: #272822;
-    padding-bottom: 25px;
+    padding-bottom: 30px;
+    z-index: 999;
+    .container{
+        padding-bottom: 30px;
+        border-bottom: 1px solid #999;
+    }
+
 }
 .role{
     @include flexbox;
     @include align-items(center);
+    @include justify-content(center);
     .role-icons{
         width: 35px;
         height: 35px;
         margin-right: 15px;
+
     }
 }
