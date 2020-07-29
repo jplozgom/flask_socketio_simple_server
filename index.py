@@ -25,7 +25,7 @@ thread_lock = Lock()
 
 def backgroundMessaging():
     while True:
-        socketio.sleep(8)
+        socketio.sleep(180)
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         print("A new message to print - " + str(current_time))
@@ -34,7 +34,7 @@ def backgroundMessaging():
 
 def backgroundNotifications():
     while True:
-        socketio.sleep(8)
+        socketio.sleep(180)
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         print("A new notification to print - " + str(current_time))

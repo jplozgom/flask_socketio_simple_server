@@ -1,0 +1,4 @@
+node_modules
+extensionMvp.code-workspace
+.vscode
+__pycache__

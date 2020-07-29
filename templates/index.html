@@ -1,12 +1,96 @@
-
 <!DOCTYPE HTML>
 <html>
-<head>
-    <title></title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+        <title>Title Page</title>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+    </head>
 <body>
     <div class="container">
-        <h2 class="text-center">Mobbot - SocketIO Extension test</h2>
+
+        <header class="mb-6">
+            <div class="container">
+                <div class="columns">
+                    <div class="is-7 column">
+                        <h1 class="pb-4 has-text-warning title is-2 has-text-left has-text-centered-mobile">Course name</h1>
+                        <h3 class="has-text-warning subtitle is-4 has-text-left has-text-centered-mobile">Title of the weekly task</h3>
+                    </div>
+                    <div class="is-5 column">
+                        <p class="pb-4 has-text-danger title is-4 has-text-right has-text-centered-mobile"> <span class="is-blinking has-text-danger " id="extension-timer">6:45</span> min remaining</p>
+                        <p class="has-text-success subtitle is-5 has-text-right has-text-centered-mobile">ITERATION 1 OF 10</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="columns roles-container pb-3">
+            <div class="column is-3">
+                <div class=" has-text-success role">
+                    <svg class="role-icons has-text-success" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M13,19.92C14.8,19.7 16.35,18.95 17.65,17.65C18.95,16.35 19.7,14.8 19.92,13H16.92C16.7,14 16.24,14.84 15.54,15.54C14.84,16.24 14,16.7 13,16.92V19.92M10,8H14L17,11H19.92C19.67,9.05 18.79,7.38 17.27,6C15.76,4.66 14,4 12,4C10,4 8.24,4.66 6.73,6C5.21,7.38 4.33,9.05 4.08,11H7L10,8M11,19.92V16.92C10,16.7 9.16,16.24 8.46,15.54C7.76,14.84 7.3,14 7.08,13H4.08C4.3,14.77 5.05,16.3 6.35,17.6C7.65,18.9 9.2,19.67 11,19.92M12,2C14.75,2 17.1,3 19.05,4.95C21,6.9 22,9.25 22,12C22,14.75 21,17.1 19.05,19.05C17.1,21 14.75,22 12,22C9.25,22 6.9,21 4.95,19.05C3,17.1 2,14.75 2,12C2,9.25 3,6.9 4.95,4.95C6.9,3 9.25,2 12,2Z" />
+                    </svg>
+                    <span class="is-size-4 has-text-success">Peter</span>
+                </div>
+            </div>
+            <div class="column">
+                <div class=" has-text-success role is-3">
+                    <svg class="role-icons has-text-success"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M11,6H13V13H11V6M9,20A1,1 0 0,1 8,21H5A1,1 0 0,1 4,20V15L6,6H10V13A1,1 0 0,1 9,14V20M10,5H7V3H10V5M15,20V14A1,1 0 0,1 14,13V6H18L20,15V20A1,1 0 0,1 19,21H16A1,1 0 0,1 15,20M14,5V3H17V5H14Z" />
+                    </svg>
+                    <spa class="is-size-4 has-text-success">Juan</span>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class=" has-text-success role">
+                    <svg class="role-icons has-text-success"
+                        viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z" />
+                    </svg>
+                    <spa class="is-size-4 has-text-light">jplozano, sidd, sree </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class=" column is-12">
+                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                    Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Sed posuere consectetur
+                    est
+                    at lobortis. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes,
+                    nascetur ridiculus mus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec
+                    elit.
+
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac
+                    consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula
+                    ut id
+                    elit.
+                </p>
+            </div>
+            <div class="is-half column">
+
+                <div class="columns">
+                    <div class="column is-half">
+                    </div>
+                    <div class="column is-half">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <br>
         <br>
         <hr>
@@ -14,8 +98,12 @@
         <br>
 
 
-        <div class="row">
-            <div class="col-xs-12 col-md-6">
+
+
+
+
+        <div class="columns">
+            <div class="column is-half">
                 <div id="log-messages" class="messages">
                     <h4 class="text-center">Messages received:</h4>
                     <template id="message_template">
@@ -24,7 +112,7 @@
                     <div style="border: 1px solid rgb(169, 174, 192); padding: 20px;min-height: 300px;" id="message_container"></div>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-6">
+            <div class="column is-half">
                 <div id="log-notifications" class="notifications">
                     <h4 class="text-center">Notifications received:</h4>
                     <template id="notification_template">
@@ -39,44 +127,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/final.css') }}">
+    <script src="{{ url_for('static', filename='javascripts/app.js') }}"></script>
 
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript"charset="utf-8">
-        $(document).ready(function () {
-            url = ""
-            namespace = '/mobbot';
-            var socket = io(url + namespace);
-
-            //connected to server event
-            socket.on('connect', function () {
-                console.log("connected to server");
-            });
-
-            //listen for mobbot message
-            socket.on('mobbot_message', (data) => {
-                console.log("new message --- " + data.msg)
-                printData("message", data.msg)
-            });
-
-            //listen for mobbot notification
-            socket.on('mobbot_notification', (data) => {
-                console.log("new message --- " + data.msg)
-                printData("notification", data.msg)
-            });
-
-            function printData(type, msg){
-                const template = document.getElementById(type+"_template");
-                let copy = template.content.cloneNode(true);
-                let container = document.getElementById(type + "_container");
-                copy.querySelector("."+type+"_mobbot").innerHTML = msg + " - " + Date.now().toString();
-                container.appendChild(copy);
-            }
-
-        });
-    </script>
 </body>
 </html>
